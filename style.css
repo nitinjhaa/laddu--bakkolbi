@@ -1,0 +1,996 @@
+/* =====================================
+   Ghibli Romantic Website
+   Premium CSS Part 1
+====================================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+:root{
+
+--pink:#ff5ca8;
+--lightPink:#ffd8ec;
+--purple:#a855f7;
+--white:#ffffff;
+--glass:rgba(255,255,255,.18);
+--shadow:0 20px 45px rgba(0,0,0,.25);
+
+}
+
+body{
+
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#ffd6e8,#d9d8ff,#cde7ff);
+color:white;
+overflow-x:hidden;
+min-height:100vh;
+
+}
+
+/* Animated Background */
+
+body::before{
+
+content:"";
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:url("assets/bg.jpg");
+
+background-size:cover;
+background-position:center;
+
+opacity:.22;
+
+z-index:-3;
+
+animation:bgMove 25s linear infinite;
+
+}
+
+@keyframes bgMove{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+/* Dark Overlay */
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+background:rgba(20,15,35,.30);
+
+z-index:-2;
+
+}
+
+/* Glass Card */
+
+.glass{
+
+background:var(--glass);
+
+backdrop-filter:blur(16px);
+
+border:1px solid rgba(255,255,255,.25);
+
+border-radius:28px;
+
+box-shadow:var(--shadow);
+
+padding:45px;
+
+}
+
+/* Hero */
+
+.hero{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:25px;
+
+text-align:center;
+
+}
+
+.hero h3{
+
+font-weight:300;
+
+letter-spacing:2px;
+
+}
+
+.hero .name{
+
+font-size:24px;
+
+margin:10px 0;
+
+color:#ffe8f5;
+
+}
+
+.hero .title{
+
+font-family:'Dancing Script',cursive;
+
+font-size:70px;
+
+margin:20px 0;
+
+color:white;
+
+text-shadow:
+
+0 0 20px hotpink,
+
+0 0 40px deeppink;
+
+animation:glow 2s infinite alternate;
+
+}
+
+@keyframes glow{
+
+from{
+
+text-shadow:
+0 0 10px hotpink;
+
+}
+
+to{
+
+text-shadow:
+0 0 35px deeppink,
+0 0 60px hotpink;
+
+}
+
+}
+
+.subtitle{
+
+font-size:18px;
+
+margin-bottom:35px;
+
+opacity:.95;
+
+}
+
+/* Buttons */
+
+button{
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:50px;
+
+background:linear-gradient(90deg,#ff4fa2,#ff77b8);
+
+color:white;
+
+font-size:17px;
+
+cursor:pointer;
+
+transition:.35s;
+
+box-shadow:
+
+0 10px 30px rgba(255,0,120,.45);
+
+}
+
+button:hover{
+
+transform:translateY(-4px) scale(1.05);
+
+box-shadow:
+
+0 18px 40px rgba(255,0,120,.65);
+
+}
+
+/* Hidden Sections */
+
+.hidden{
+
+display:none;
+
+}
+
+/* Section */
+
+section{
+
+padding:100px 20px;
+
+}
+
+.section-title{
+
+font-size:45px;
+
+font-family:'Dancing Script',cursive;
+
+margin-bottom:15px;
+
+}
+
+.section-subtitle{
+
+font-size:18px;
+
+opacity:.9;
+
+margin-bottom:45px;
+
+}
+/* =====================================
+   PREMIUM GALLERY
+====================================== */
+
+.gallery-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+max-width:1400px;
+
+margin:auto;
+
+padding-top:40px;
+
+}
+
+.photo-card{
+
+position:relative;
+
+overflow:hidden;
+
+border-radius:28px;
+
+background:rgba(255,255,255,.12);
+
+backdrop-filter:blur(12px);
+
+box-shadow:0 15px 35px rgba(0,0,0,.35);
+
+transition:.5s;
+
+cursor:pointer;
+
+}
+
+.photo-card:hover{
+
+transform:translateY(-12px) scale(1.04);
+
+box-shadow:
+
+0 20px 50px rgba(255,105,180,.45);
+
+}
+
+.photo-card img{
+
+width:100%;
+
+height:380px;
+
+object-fit:cover;
+
+transition:1s;
+
+display:block;
+
+}
+
+.photo-card:hover img{
+
+transform:scale(1.15);
+
+}
+
+.photo-card::before{
+
+content:"❤️";
+
+position:absolute;
+
+top:15px;
+
+right:20px;
+
+font-size:26px;
+
+opacity:0;
+
+transition:.5s;
+
+}
+
+.photo-card:hover::before{
+
+opacity:1;
+
+transform:scale(1.3);
+
+}
+
+/* =====================================
+   VIDEO SECTION
+====================================== */
+
+.video-box{
+
+width:90%;
+
+max-width:900px;
+
+margin:auto;
+
+overflow:hidden;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.15);
+
+padding:15px;
+
+backdrop-filter:blur(12px);
+
+box-shadow:0 20px 50px rgba(0,0,0,.35);
+
+}
+
+.video-box video{
+
+width:100%;
+
+border-radius:20px;
+
+display:block;
+
+}
+
+/* =====================================
+   LOVE LETTER
+====================================== */
+
+.letterCard{
+
+max-width:900px;
+
+margin:auto;
+
+text-align:center;
+
+}
+
+#typing{
+
+font-size:20px;
+
+line-height:42px;
+
+white-space:pre-line;
+
+color:#fff;
+
+}
+
+/* =====================================
+   FLOATING HEARTS
+====================================== */
+
+#hearts{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:999;
+
+}
+
+.heart{
+
+position:absolute;
+
+bottom:-80px;
+
+font-size:30px;
+
+animation:heartFloat linear forwards;
+
+opacity:.8;
+
+}
+
+@keyframes heartFloat{
+
+0%{
+
+transform:translateY(0) scale(.5);
+
+opacity:0;
+
+}
+
+20%{
+
+opacity:1;
+
+}
+
+100%{
+
+transform:translateY(-120vh) rotate(360deg) scale(1.4);
+
+opacity:0;
+
+}
+
+}
+
+/* =====================================
+   FLOATING PETALS
+====================================== */
+
+#petals{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+overflow:hidden;
+
+z-index:998;
+
+}
+
+.petal{
+
+position:absolute;
+
+top:-50px;
+
+font-size:22px;
+
+animation:petalFall linear forwards;
+
+opacity:.9;
+
+}
+
+@keyframes petalFall{
+
+0%{
+
+transform:translateY(-50px) rotate(0deg);
+
+}
+
+100%{
+
+transform:translateY(120vh) rotate(720deg);
+
+}
+
+}
+
+/* =====================================
+   FLOATING STARS
+====================================== */
+
+#stars{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+pointer-events:none;
+
+z-index:997;
+
+}
+
+.star{
+
+position:absolute;
+
+width:4px;
+
+height:4px;
+
+background:white;
+
+border-radius:50%;
+
+animation:twinkle 2s infinite;
+
+}
+
+@keyframes twinkle{
+
+0%,100%{
+
+opacity:.2;
+
+transform:scale(.8);
+
+}
+
+50%{
+
+opacity:1;
+
+transform:scale(1.8);
+
+}
+
+}
+/* =====================================
+   LOADER
+====================================== */
+
+#loader{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ffb6d9,#d6c8ff,#bde7ff);
+z-index:99999;
+transition:1s;
+}
+
+.loader-heart{
+font-size:80px;
+animation:heartbeat 1s infinite;
+}
+
+#loader h2{
+margin-top:20px;
+font-size:35px;
+font-family:'Dancing Script',cursive;
+}
+
+#loader p{
+margin-top:10px;
+font-size:18px;
+opacity:.8;
+}
+
+@keyframes heartbeat{
+
+0%{
+transform:scale(1);
+}
+
+25%{
+transform:scale(1.25);
+}
+
+50%{
+transform:scale(1);
+}
+
+75%{
+transform:scale(1.2);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+/* =====================================
+   MUSIC PLAYER
+====================================== */
+
+#musicPlayer{
+
+position:fixed;
+
+bottom:20px;
+
+right:20px;
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+padding:12px 18px;
+
+background:rgba(255,255,255,.15);
+
+backdrop-filter:blur(15px);
+
+border-radius:50px;
+
+box-shadow:0 10px 30px rgba(0,0,0,.3);
+
+z-index:999;
+
+}
+
+#musicPlayer span{
+
+font-size:14px;
+
+white-space:nowrap;
+
+}
+
+#playPause{
+
+width:50px;
+
+height:50px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+padding:0;
+
+}
+
+#volume{
+
+width:100px;
+
+cursor:pointer;
+
+}
+
+/* =====================================
+   ENDING
+====================================== */
+
+.ending{
+
+text-align:center;
+
+padding:140px 20px;
+
+}
+
+.ending h1{
+
+font-size:75px;
+
+font-family:'Dancing Script',cursive;
+
+color:white;
+
+text-shadow:
+
+0 0 20px hotpink,
+
+0 0 50px deeppink;
+
+animation:glow 2s infinite alternate;
+
+}
+
+.ending h2{
+
+margin:20px 0;
+
+font-size:34px;
+
+}
+
+.ending p{
+
+max-width:700px;
+
+margin:auto;
+
+font-size:20px;
+
+line-height:40px;
+
+}
+
+/* =====================================
+   FOOTER
+====================================== */
+
+.footer{
+
+padding:80px 20px;
+
+text-align:center;
+
+}
+
+.footer-card{
+
+max-width:700px;
+
+margin:auto;
+
+}
+
+.footer h2{
+
+font-family:'Dancing Script',cursive;
+
+font-size:42px;
+
+margin-bottom:20px;
+
+}
+
+.footer p{
+
+line-height:34px;
+
+}
+
+/* =====================================
+   BACK TO TOP
+====================================== */
+
+#topBtn{
+
+position:fixed;
+
+bottom:90px;
+
+right:25px;
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:22px;
+
+display:none;
+
+z-index:999;
+
+}
+
+/* =====================================
+   LIGHTBOX
+====================================== */
+
+#lightbox{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.92);
+
+display:none;
+
+justify-content:center;
+
+align-items:center;
+
+z-index:9999;
+
+}
+
+#lightbox img{
+
+max-width:90%;
+
+max-height:90%;
+
+border-radius:20px;
+
+box-shadow:0 20px 50px rgba(255,255,255,.15);
+
+}
+
+#closeLightbox{
+
+position:absolute;
+
+top:30px;
+
+right:40px;
+
+font-size:45px;
+
+cursor:pointer;
+
+color:white;
+
+}
+
+/* =====================================
+   SCROLL ANIMATION
+====================================== */
+
+section{
+
+opacity:0;
+
+transform:translateY(60px);
+
+transition:1s;
+
+}
+
+section.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+/* =====================================
+   MOBILE
+====================================== */
+
+@media(max-width:768px){
+
+.hero .title{
+
+font-size:48px;
+
+}
+
+.glass{
+
+padding:25px;
+
+}
+
+.section-title{
+
+font-size:36px;
+
+}
+
+.photo-card img{
+
+height:280px;
+
+}
+
+#musicPlayer{
+
+left:10px;
+
+right:10px;
+
+bottom:15px;
+
+justify-content:center;
+
+}
+
+#volume{
+
+display:none;
+
+}
+
+button{
+
+width:100%;
+
+margin-top:12px;
+
+}
+
+.ending h1{
+
+font-size:50px;
+
+}
+
+.ending p{
+
+font-size:17px;
+
+line-height:32px;
+
+}
+
+}
